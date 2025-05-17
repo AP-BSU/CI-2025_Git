@@ -1,22 +1,23 @@
 #Dev notes for edit:
 
-#Remaining Sections = 8
-#Header (WIP)
+Completed Sections = 2
+-Header
+-FAQ
+
+#Remaining Sections = 6
+
 -Our Service
 -Our Mission
 -How we work
 -About Us
 -Our Project
--FAQ
 -Footnote
 -Footer
 
-#Header:
+
+NOTES:
 -Placeholder and values for each section are added
--Header is partially complete:
-	--Icon values
-	--Temporary Background and img src for section 1 are on CSS
-	--Temporary menu-btn image (Mobile menu) button CSS
+-FAQ functions are null (Require Data Platform Credentials before functionality add-on)
 
 #Optional
 Integration of requested backend?
