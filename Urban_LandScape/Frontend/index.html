@@ -6,58 +6,80 @@
     <title>Web Draft</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="script.js" defer></script> <!--JS for Header, FAQ, misc-->
+    <link rel="stylesheet" href="header.css">
+
 </head>
 <body>
-
+    <!-- Header Section -->
     <header>
-        <!-- Left Section: Green Rounded Square with Logo -->
-        <div class="header-left">
-            <div class="icon-box">
-                <img src="placeholder.png" alt="Logo">
-            </div>
-        </div>
-
-        <!-- Middle Section: Shortcut Headers to Sections (Hidden in Mobile) -->
-        <nav class="header-middle">
-            <h3><a href="#section-a">Home</a></h3>
-            <h3><a href="#section-b">Services</a></h3>
-            <h3><a href="#section-c">Projects</a></h3>
-            <h3><a href="#section-d">About</a></h3>
+        <img src="placeholderLB.png" alt="Urban_LandScape" class="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#section-b">Services</a></li>
+                <li><a href="#section-c">Projects</a></li>
+                <li><a href="#section-d">About Us</a></li>
+                <li><a href="#section-g">FAQ</a></li>
+                <li><a href="#footer">Contacts</a></li>
+            </ul>
+            <button class="menu-btn">
+                <img src="Menu_Icon-A.png" alt="Menu">
+            </button>
         </nav>
-
-        <!-- Right Section: "Contacts" Shortcut to Footer (Hidden in Mobile) -->
-        <div class="header-right">
-            <div class="info-box">
-                <h3><a href="#footer">Contacts</a></h3>
-            </div>
-        </div>
-
-        <!-- Mobile Settings Button (Only Visible on Phones) -->
-        <button class="menu-btn">
-            <img src="menu_icon-B.png" alt="Menu Icon">
-        </button>
     </header>
-
-    <!-- Overlay Menu -->
+    <!-- Overlay Menu (Mobile & Tablet Only) -->
     <div class="overlay">
         <div class="overlay-menu">
-            <a href="#section-a">Home</a>
             <a href="#section-b">Services</a>
             <a href="#section-c">Projects</a>
-            <a href="#section-d">About</a>
+            <a href="#section-d">About Us</a>
+            <a href="#section-g">FAQ</a>
             <a href="#footer">Contacts</a>
         </div>
     </div>
 
+    <!-- Section-a (Introduction)-->
+    <section id="section-a" class="content-section hero-section">
+        <img src="placeholderBG.png" alt="" id="section-a-bg"> <!-- Section-a Background (Introduction)-->
+        <img src="placeholderLB.png" alt="Urban Tropical Landscape" id="section-a-img"> <!-- Section-a title (Introduction)-->
+        <div class="section-a-content">
+            <h1>Urban<br>Tropical<br>Landscape</h1>
+            <p>We Define Exclusivity.</p>
+        </div>
+    </section>
+
     <!-- Placeholder Sections -->
-    <section id="section-a" class="content-section">Home</section>
     <section id="section-b" class="content-section">Services</section>
     <section id="section-c" class="content-section">Projects</section>
-    <section id="section-d" class="content-section">About</section>
-    <section id="#footer" class="content-section">Contacts</section>
+    <section id="section-d" class="content-section">About Us - Start</section>
+    <section id="section-e" class="content-section">About Us - Contents</section>
+    <section id="section-f" class="content-section">Projects</section>
 
-    <!-- Footer -->
+    <!-- FAQ Section with HTML-based Background Image -->
+  <section id="section-g" class="faq-section">
+    <img class="faq-bg" src="placeholderBG.png" alt="FAQ Background" />
+    
+    <h2>Have a question? Fill this out</h2>
+    <form class="faq-form">
+      <div class="faq-row">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="faq-row">
+        <input type="tel" name="phone" placeholder="Phone" required />
+        <select name="subject" required>
+          <option value="">Subject</option> <!--Choices-->
+          <option value="inquiry">General Inquiry</option>
+          <option value="quote">Request a Quote</option>
+          <option value="Other">Others</option>
+        </select>
+      </div>
+      <textarea name="message" placeholder="Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+
     <footer id="footer">
         <p>Legal Jargon here &copy; [Domain Years]</p>
     </footer>
