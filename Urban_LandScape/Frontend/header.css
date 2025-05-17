@@ -1,0 +1,173 @@
+/* ===== HEADER ONLY STYLES ===== */
+:root {
+    --nav-gap: 8px; /* Change this value to control spacing between nav links */
+}
+
+/* Header Navigation */
+header {
+    background: #b2c46d;
+    padding: 0;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 70px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: transform 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+}
+
+/* Hide navbar with animation */
+header.navbar-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s cubic-bezier(.4,2,.6,1), opacity 0.4s;
+}
+
+/* Logo on the left */
+.logo {
+    width: 110px;
+    height: auto;
+    margin: 8px 0 0 18px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+/* Navigation container */
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Right align nav links */
+    align-items: center;
+    height: 100%;
+    margin-right: 40px; /* Space from right edge */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--nav-gap); /* Controls spacing between nav buttons */
+    height: 100%;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+    letter-spacing: 1px;
+    padding: 0 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #333;
+}
+
+/* Overlay Styling */
+.overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 128, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(.4,2,.6,1);
+}
+
+.overlay.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    animation: overlayFadeIn 0.4s cubic-bezier(.4,2,.6,1);
+}
+
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Overlay Menu */
+.overlay-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.overlay-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+    z-index: 2001;
+    padding: 0;
+}
+
+.menu-btn img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+/* Responsive Design for Header */
+@media (max-width: 900px) {
+    .logo {
+        width: 80px;
+        margin: 8px 0 0 8px;
+    }
+    .nav-links {
+        gap: 16px;
+    }
+    nav {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+    }
+}
